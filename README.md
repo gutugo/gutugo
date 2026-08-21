@@ -1,88 +1,87 @@
-<h1>Sergey Kravtsov</h1>
+# Sergey Kravtsov
 
-<p>
-Independent developer. Ex-CEO / CTO in Russia's real-sector manufacturing, now building AI-paired systems and products for operating businesses. Claude Code and Cursor as everyday tools — not autocomplete, but actual pair-programming partners across architecture, implementation, and review.
-</p>
+Independent developer. Before that — ten years as CEO and CTO in Russian
+manufacturing. I build and maintain the systems below; source code for client
+projects is private.
 
-<p>
-  <a href="mailto:skravtsov@gmail.com"><img src="https://img.shields.io/badge/email-skravtsov%40gmail.com-D14836?logo=gmail&logoColor=white" alt="Email"></a>
-  <a href="https://t.me/gutugo"><img src="https://img.shields.io/badge/Telegram-%40gutugo-0088CC?logo=telegram&logoColor=white" alt="Telegram"></a>
-  <a href="https://linkedin.com/in/serg-kravtsov"><img src="https://img.shields.io/badge/LinkedIn-serg--kravtsov-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="https://vc.ru/id5751611/2767681-alltrails-stoit-750-mln-v-rossii-net-analogov"><img src="https://img.shields.io/badge/vc.ru-article_%E2%86%92_330%2B_reactions-FF6B35" alt="vc.ru article"></a>
-</p>
+Telegram [@gutugo](https://t.me/gutugo) · skravtsov@gmail.com ·
+LinkedIn [serg-kravtsov](https://linkedin.com/in/serg-kravtsov)
 
 ---
 
-## 🛠 Stack I actually use
+## BigHouse CRM Agent
 
-![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-async-009688?logo=fastapi&logoColor=white)
-![Fastify](https://img.shields.io/badge/Fastify-5-000000?logo=fastify&logoColor=white)
-![React_Native](https://img.shields.io/badge/React_Native-Expo-61DAFB?logo=react&logoColor=white)
-![aiogram](https://img.shields.io/badge/aiogram-3.x-0088CC?logo=telegram&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16_%2B_PostGIS-4169E1?logo=postgresql&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-WAL-003B57?logo=sqlite&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)
-![Qwen](https://img.shields.io/badge/LLM-Qwen--Plus_%2B_Ollama-8A2BE2)
-![Claude](https://img.shields.io/badge/Claude_Code-pair--programming-D97757)
+Analytical CRM for a larch and oak lumber manufacturer. Reads incoming email,
+Telegram and phone calls, classifies each message with an LLM, maintains the
+client and order database, and puts a morning report on the director's desk in
+YouGile. Calls are transcribed locally and go through the same pipeline as text.
 
----
+Python, FastAPI, SQLAlchemy async, PostgreSQL, Redis with arq, Qwen-Plus with a
+local Ollama fallback, faster-whisper, React and Vite. Docker Compose on a
+Mac Mini.
 
-## 📦 Current projects
+In production since March 2026, developed weekly.
 
-### 🏭 BigHouse CRM Agent &nbsp;·&nbsp; commercial, in production
-AI-powered analytical CRM for a mid-size construction-materials manufacturer. Reads email + Telegram in real time, classifies messages with a hybrid LLM stack (Qwen-Plus cloud + local Ollama), auto-builds client and order database, delivers daily analytics to the director, auto-creates tasks in YouGile.
-**47 days · 81 commits · 642 tests · 80%+ coverage · 5-service Docker stack · live since Mar 10, 2026**
-Stack: Python 3.12 · FastAPI async · PostgreSQL 16 · Redis · arq · Telethon · SQLAlchemy 2.0 async · React + Vite
+## bighouse.ru
 
-### 🥾 Тропы (tropy.app) &nbsp;·&nbsp; personal product, pre-launch
-Mobile app for hiking trails across Russia's wild nature — an AllTrails-level product for a market that has none. Built solo in 52 days with AI agents as the team. Android release on the way.
-**52 days · 163 commits · 593 tests · own Fastify backend · ~28,500 LOC · 4 pilot regions**
-Stack: React Native 0.83 + Expo SDK 55 · TypeScript strict · Fastify 5 · PostgreSQL 16 + PostGIS · MapLibre · EAS Build
-🔗 [tropy.app](https://tropy.app) &nbsp;·&nbsp; 📄 [vc.ru article about the project](https://vc.ru/id5751611/2767681-alltrails-stoit-750-mln-v-rossii-net-analogov)
+Product catalog for the same manufacturer. Not a store: visitors browse
+products and send quote requests, which arrive in the CRM agent above.
 
-### 📦 HVAC Filter Sales Bot &nbsp;·&nbsp; commercial, in production
-Full-cycle B2B sales Telegram bot for a HVAC filter distributor. Catalog → cart → INN-validated checkout with Dadata auto-lookup → manager panel with editable orders → bank-style PDF invoices (two legal entities, two tax systems) → email delivery. Closes the sale inside one chat.
-**7 weeks · 176 commits · 185+ tests · 75 Python modules · live in production**
-Stack: Python 3.11+ · aiogram 3.x · aiosqlite (WAL) · ReportLab · Dadata API · aiosmtplib · systemd
+Next.js, React, TypeScript, Prisma, PostgreSQL. PM2 and nginx on a VPS.
 
----
+Live, developed weekly.
 
-## 🧭 How I work
+## Тропы — [tropy.app](https://tropy.app)
 
-- **Solo + AI agents as the operating model** — one developer with current-generation AI tools, shipping work that used to require a small team. Not hype: this is the stack three production systems above were actually built on.
-- **Tests are not polish** — 642 / 593 / 185 tests across projects. At AI-paired velocity, tests are the only thing keeping the code honest.
-- **Real-sector operator background** — 10+ years as CEO / CTO before writing code full time. I build for businesses that actually run, not for demos.
+Hiking app for Russia's wild nature. Trail catalog with geometry taken from
+OpenStreetMap, offline maps for places without a signal, GPS track recording,
+and trail-condition reports left by people who walked there. My own product.
 
----
+React Native and Expo, TypeScript, Fastify, PostgreSQL with PostGIS, MapLibre.
+Three custom Android modules: RuStore push, power-saving detection, raw GNSS.
 
-## 📬 Get in touch
+Backend in production on a Russian VPS. Android app pre-launch, going to
+RuStore; builds will be published at [github.com/gutugo/tropy](https://github.com/gutugo/tropy).
+[Article about the project on vc.ru](https://vc.ru/id5751611/2767681-alltrails-stoit-750-mln-v-rossii-net-analogov)
 
-Reach out on [Telegram](https://t.me/gutugo), by [email](mailto:skravtsov@gmail.com), or on [LinkedIn](https://linkedin.com/in/serg-kravtsov).
-Source code for client projects is private. This profile is the documentation.
+## Tion filter sales bot
+
+B2B sales bot for a ventilation filter dealer: catalog, cart, checkout with
+company lookup by INN, manager panel with editable orders, PDF invoices for two
+legal entities, delivery by email and in chat.
+
+Python, aiogram, SQLite, ReportLab, Dadata.
+
+In production. Stable since May 2026 — nothing has needed changing.
 
 ---
 
-<br/>
+## По-русски
 
-## 🇷🇺 По-русски
+Независимый разработчик. До этого — десять лет как CEO и CTO в производстве.
+Веду системы ниже; исходники клиентских проектов приватные.
 
-**Сергей Кравцов** — независимый разработчик. Бывший CEO/CTO в реальном секторе, сейчас строю AI-системы и продукты для действующих бизнесов. Claude Code и Cursor — повседневный рабочий инструмент, а не модное слово.
+**BigHouse CRM Agent** — аналитическая CRM для производителя пиломатериалов из
+лиственницы и дуба. Читает почту, Telegram и телефонные звонки, классифицирует
+через LLM, ведёт базу клиентов и заказов, каждое утро приносит директору отчёт
+в YouGile. Звонки расшифровываются локально и идут тем же конвейером, что и
+текст. Python, FastAPI, PostgreSQL, Redis, Qwen-Plus с локальным Ollama
+в резерве. В проде с марта 2026, дорабатывается каждую неделю.
 
-### Текущие проекты
+**bighouse.ru** — каталог продукции того же производителя. Не магазин:
+посетитель смотрит товары и отправляет запрос цены, запрос попадает в CRM-агента
+выше. Next.js, Prisma, PostgreSQL. Живой, дорабатывается каждую неделю.
 
-**🏭 BigHouse CRM Agent** — AI-CRM для среднего производства. Читает почту и Telegram в реальном времени, классифицирует через гибридный LLM-стек (Qwen-Plus облачный + локальный Ollama), сам строит базу клиентов и заказов, каждое утро приносит директору аналитический отчёт. *47 дней · 642 теста · в проде с 10 марта 2026*.
+**Тропы ([tropy.app](https://tropy.app))** — приложение для пеших маршрутов по
+дикой природе России. Каталог троп с геометрией из OpenStreetMap, офлайн-карты
+для мест без связи, запись трека, отметки о состоянии тропы от тех, кто там
+прошёл. Свой продукт. React Native, Fastify, PostgreSQL с PostGIS, MapLibre,
+три своих Android-модуля. Бэкенд в проде, Android-приложение готовится
+к публикации в RuStore, сборки будут выкладываться
+в [github.com/gutugo/tropy](https://github.com/gutugo/tropy).
+[Статья о проекте на vc.ru](https://vc.ru/id5751611/2767681-alltrails-stoit-750-mln-v-rossii-net-analogov)
 
-**🥾 Тропы ([tropy.app](https://tropy.app))** — мобильное приложение для пеших маршрутов по России. Аналог AllTrails для рынка, где его нет. Сделано одним разработчиком за 52 дня в паре с AI-агентами. *163 коммита · 593 теста · скоро релиз Android.* [Статья на vc.ru →](https://vc.ru/id5751611/2767681-alltrails-stoit-750-mln-v-rossii-net-analogov)
-
-**📦 HVAC Filter Sales Bot** — Telegram-бот полного цикла B2B-продаж для дистрибьютора фильтров вентиляции. От каталога до оплаченного счёта — всё внутри одного чата. *7 недель · 185+ тестов · в проде.*
-
-### Как я работаю
-
-Один разработчик + AI-агенты закрывают работу команды. Это не буллет-поинт из резюме — это реально стек, на котором построены три продакшен-системы выше. Тесты не как полировка, а как единственный способ держать скорость AI-парной разработки честной. Плюс 10+ лет опыта в реальном секторе до того, как писать код стало основной работой.
-
-### Связь
-
-Telegram [@gutugo](https://t.me/gutugo) · email skravtsov@gmail.com · LinkedIn [serg-kravtsov](https://linkedin.com/in/serg-kravtsov). Исходники клиентских проектов приватные — этот профиль и есть документация.
+**Бот продаж фильтров Tion** — B2B-бот для дилера фильтров вентиляции: каталог,
+корзина, оформление с подтягиванием компании по ИНН, панель менеджера,
+PDF-счета на два юрлица, отправка на почту и в чат. Python, aiogram, SQLite.
+Работает в проде. С мая 2026 не менялся — не потребовалось.
