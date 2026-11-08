@@ -1,87 +1,100 @@
 # Sergey Kravtsov
 
-Independent developer. Before that — ten years as CEO and CTO in Russian
-manufacturing. I build and maintain the systems below; source code for client
-projects is private.
+**QA Engineer | Manual & Automated Testing | Agentic Engineering**
 
-Telegram [@gutugo](https://t.me/gutugo) · skravtsov@gmail.com ·
-LinkedIn [serg-kravtsov](https://linkedin.com/in/serg-kravtsov)
+I test web applications, APIs, and mobile products and develop software using AI coding agents. My experience includes a QA internship at a US healthcare SaaS company and hands-on development and testing of applications for an operating lumber business.
 
----
+I’m seeking **remote QA Engineer, Software QA Analyst, and QA Automation Engineer opportunities with North American teams** and am open to relocation.
 
-## BigHouse CRM Agent
+[LinkedIn](https://www.linkedin.com/in/serg-kravtsov/) · [Telegram](https://t.me/gutugo) · [Email](mailto:skravtsov@gmail.com)
 
-Analytical CRM for a larch and oak lumber manufacturer. Reads incoming email,
-Telegram and phone calls, classifies each message with an LLM, maintains the
-client and order database, and puts a morning report on the director's desk in
-YouGile. Calls are transcribed locally and go through the same pipeline as text.
+## QA and engineering approach
 
-Python, FastAPI, SQLAlchemy async, PostgreSQL, Redis with arq, Qwen-Plus with a
-local Ollama fallback, faster-whisper, React and Vite. Docker Compose on a
-Mac Mini.
+- Translate requirements and business rules into test cases and reproducible automated checks.
+- Combine functional, regression, exploratory, API, and database testing with unit, component, integration, and end-to-end tests.
+- Use equivalence partitioning, boundary value analysis, decision tables, and pairwise testing.
+- Investigate failures and check financial calculations, permissions, state transitions, validation, and fallback behavior.
+- Use Claude Code and Cursor for implementation, test development, debugging, and review, with explicit requirements and human verification.
 
-In production since March 2026, developed weekly.
+**Tools:** Python, TypeScript, SQL, pytest, Playwright, Vitest, Jest, React Testing Library, Postman, Swagger, Git, Jira, PostgreSQL, and Docker.
 
-## bighouse.ru
+## Selected business projects
 
-Product catalog for the same manufacturer. Not a store: visitors browse
-products and send quote requests, which arrive in the CRM agent above.
+### BigHouse ERP
 
-Next.js, React, TypeScript, Prisma, PostgreSQL. PM2 and nginx on a VPS.
+ERP for a lumber business, covering quotes, orders, inventory allocation, production, shipping, and business documents. This is my main project for connecting business requirements with software quality.
 
-Live, developed weekly.
+Selected automated checks cover:
 
-## Тропы — [tropy.app](https://tropy.app)
+- Financial calculations, rounding, and consistency across orders, invoices, and shipping documents.
+- Role-based permissions for pages, APIs, and server actions.
+- Document state transitions, including rejected operations.
+- Inventory, reservation, and production workflows.
+- Integration behavior against a real PostgreSQL database.
 
-Hiking app for Russia's wild nature. Trail catalog with geometry taken from
-OpenStreetMap, offline maps for places without a signal, GPS track recording,
-and trail-condition reports left by people who walked there. My own product.
+The repository includes unit, component, architecture, security, and database integration tests, with coverage gates and isolated test environments.
 
-React Native and Expo, TypeScript, Fastify, PostgreSQL with PostGIS, MapLibre.
-Three custom Android modules: RuStore push, power-saving detection, raw GNSS.
+**Stack:** TypeScript, Next.js, React, Prisma, PostgreSQL, Vitest, React Testing Library, Docker.  
+**Source code:** private.
 
-Backend in production on a Russian VPS. Android app pre-launch, going to
-RuStore; builds will be published at [github.com/gutugo/tropy](https://github.com/gutugo/tropy).
-[Article about the project on vc.ru](https://vc.ru/id5751611/2767681-alltrails-stoit-750-mln-v-rossii-net-analogov)
+### BigHouse — Product Catalog & Quote Requests
 
-## Tion filter sales bot
+Product catalog and quote-request website for the same lumber business. Visitors browse products and variants and submit quote requests.
 
-B2B sales bot for a ventilation filter dealer: catalog, cart, checkout with
-company lookup by INN, manager panel with editable orders, PDF invoices for two
-legal entities, delivery by email and in chat.
+API and component tests use Vitest and React Testing Library. Playwright scenarios cover product selection and quote submission. CI includes lint, TypeScript checks, and tests with coverage gates.
 
-Python, aiogram, SQLite, ReportLab, Dadata.
+**Stack:** TypeScript, Next.js, React, Prisma, PostgreSQL, Playwright, Vitest.  
+**Website:** [bighouse.ru](https://bighouse.ru) · **Source code:** private.
 
-In production. Stable since May 2026 — nothing has needed changing.
+### BigHouse CRM Agent
 
----
+CRM automation that processes email, Telegram messages, and calls with LLM classification, maintains client and order records, and delivers reports through YouGile.
 
-## По-русски
+Python test suites cover message-processing rules, contact and order deduplication, API behavior, and cloud-to-local LLM fallback, using unit, API, integration, and end-to-end checks.
 
-Независимый разработчик. До этого — десять лет как CEO и CTO в производстве.
-Веду системы ниже; исходники клиентских проектов приватные.
+**Stack:** Python, FastAPI, SQLAlchemy, PostgreSQL, Redis, pytest, cloud LLMs, Ollama.  
+**Source code:** private.
 
-**BigHouse CRM Agent** — аналитическая CRM для производителя пиломатериалов из
-лиственницы и дуба. Читает почту, Telegram и телефонные звонки, классифицирует
-через LLM, ведёт базу клиентов и заказов, каждое утро приносит директору отчёт
-в YouGile. Звонки расшифровываются локально и идут тем же конвейером, что и
-текст. Python, FastAPI, PostgreSQL, Redis, Qwen-Plus с локальным Ollama
-в резерве. В проде с марта 2026, дорабатывается каждую неделю.
+### Tion Filter Sales Bot
 
-**bighouse.ru** — каталог продукции того же производителя. Не магазин:
-посетитель смотрит товары и отправляет запрос цены, запрос попадает в CRM-агента
-выше. Next.js, Prisma, PostgreSQL. Живой, дорабатывается каждую неделю.
+B2B Telegram ordering workflow for a ventilation filter dealer: catalog, cart, company lookup, manager review, editable orders, PDF invoices, and delivery by email and chat.
 
-**Тропы ([tropy.app](https://tropy.app))** — приложение для пеших маршрутов по
-дикой природе России. Каталог троп с геометрией из OpenStreetMap, офлайн-карты
-для мест без связи, запись трека, отметки о состоянии тропы от тех, кто там
-прошёл. Свой продукт. React Native, Fastify, PostgreSQL с PostGIS, MapLibre,
-три своих Android-модуля. Бэкенд в проде, Android-приложение готовится
-к публикации в RuStore, сборки будут выкладываться
-в [github.com/gutugo/tropy](https://github.com/gutugo/tropy).
-[Статья о проекте на vc.ru](https://vc.ru/id5751611/2767681-alltrails-stoit-750-mln-v-rossii-net-analogov)
+**Stack:** Python, aiogram, SQLite, ReportLab, Dadata.  
+**Source code:** private.
 
-**Бот продаж фильтров Tion** — B2B-бот для дилера фильтров вентиляции: каталог,
-корзина, оформление с подтягиванием компании по ИНН, панель менеджера,
-PDF-счета на два юрлица, отправка на почту и в чат. Python, aiogram, SQLite.
-Работает в проде. С мая 2026 не менялся — не потребовалось.
+## QA internship and public code
+
+### base86 — QA Engineering Intern
+
+**December 2025 – May 2026 · Remote · US healthcare SaaS**
+
+Performed manual functional, regression, and exploratory testing across procurement, catalog management, and analytics. Designed and maintained **100+ test cases**, tracked defects in Jira, and worked in a Scrum team.
+
+#### [Catalog Data Extractor](https://github.com/gutugo/catalog-data-extractor)
+
+Built during the internship on a direct assignment from the CEO to extract structured product data from supplier PDF catalogs. Includes local GLM-OCR inference through Ollama, table parsing, validation, confidence indicators, fallback behavior, and a Flask interface for human review and CSV export.
+
+Public QA examples include pytest fixtures and mocks, Flask API tests, validation and CSRF checks, missing-record handling, and OCR connection and malformed-response failures.
+
+**Core stack:** Python, Flask, pytest, GLM-OCR, Ollama.
+
+## Personal side project
+
+### [Tropy — Android Hiking App](https://tropy.app)
+
+My personal hiking app, **released as a beta in RuStore**. Features include route browsing, offline maps, GPS track recording, and GPX/KML import.
+
+The project includes mobile tests with Jest and React Native Testing Library, backend tests with Vitest, PostgreSQL/PostGIS integration tests, Detox E2E scenarios, and Stryker mutation testing.
+
+**Stack:** TypeScript, React Native, Expo, Fastify, PostgreSQL/PostGIS, MapLibre.  
+[RuStore](https://www.rustore.ru/catalog/app/app.tropy) · [Public builds](https://github.com/gutugo/tropy) · [Website](https://tropy.app)  
+Application source code is private; the public repository hosts builds.
+
+## Background
+
+Before moving into software, I worked in engineering and operations leadership across manufacturing, mining, and hospitality. That experience helps me understand business workflows, prioritize risks, and communicate with technical and business stakeholders.
+
+- **Mentorpiece:** QA coursework completed in March 2026; certificate earned. The associated base86 internship continued through May 2026.
+- **Siberian Federal University:** Diploma of Specialist in Engineering, Industrial Thermal Power Engineering, 2006–2012.
+- **Languages:** Russian — native; English — C1.
+
